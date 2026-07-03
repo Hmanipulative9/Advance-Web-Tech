@@ -2,16 +2,18 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class CourseService {
-  getAllCourses(): string {
-    return 'Get All Courses - from Service';
+  private courses = []; // Replace with actual database/storage logic later
+
+  getAllCourses() {
+    return this.courses;
   }
 
   getCourseById(id: string): string {
     return `Get Course with ID: ${id} - from Service`;
   }
 
-  createCourse(): string {
-    return 'Create Course - from Service';
+  createCourses(): string {
+    return 'course'
   }
 
   updateCourse(id: string): string {
@@ -25,4 +27,6 @@ export class CourseService {
   deleteCourse(id: string): string {
     return `Delete Course ${id} - from Service`;
   }
+
+
 }

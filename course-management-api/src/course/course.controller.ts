@@ -1,4 +1,3 @@
-// course.controller.ts
 import { Controller, Get, Post, Put, Patch, Delete, Param } from '@nestjs/common';
 import { CourseService } from './course.service';
 
