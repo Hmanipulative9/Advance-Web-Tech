@@ -1,4 +1,21 @@
 import { Injectable } from '@nestjs/common';
+import { CourseService } from '../course/course.service';
 
 @Injectable()
-export class EnrollmentService {}
+export class EnrollmentService {
+    constructor(private readonly courseService: CourseService) { }
+
+    enrollStudent(studentName: string, courseId: string) {
+        // Call the CourseService to retrieve course information
+        const course = this.courseService.getCourseById(courseId);
+        return {
+            message: 'Student enrolled successfully',
+            student: studentName,
+            course: course,
+        };
+    }
+
+    getEnrollments() {
+        return { message: 'All enrollments fetched', data: [] };
+    }
+}
